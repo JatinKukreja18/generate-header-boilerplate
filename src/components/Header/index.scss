@@ -1,0 +1,96 @@
+.editor-panel{
+    flex:1;
+    padding: 50px ;
+    background: #f3f4f5;
+    display : flex;
+    flex-direction: column;
+}
+#my-header a.logo{
+  display: block;   
+}
+#my-header ul{
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+#my-header ul li{
+  height: 100%;
+}
+#my-header ul li a {
+  padding: 5px 10px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  color: #000;
+  align-items: center;
+}
+#my-header .hidden{
+  display: none !important;
+}
+#my-header ul li a:hover{
+  background: #f3f4f5;
+}
+#my-header a img{
+  height: 50px;
+}
+
+
+
+
+
+
+// customisation widget
+.widget-options{
+  display: flex;
+    align-items: center;
+    background: #fff;
+    margin: 40px 0px;
+    width: max-content;
+    padding: 4px;
+    transition: .2s;
+    border-radius: 50px;
+    max-height: 24px;
+  .fab-button{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background: #2196F3;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  ul{
+    width: 0px;
+    height: 0px;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    transition: 0.3s;
+    justify-content: space-around;
+    opacity: 0;
+    li{
+      padding: 5px;
+      font-size: 10px;
+      cursor: pointer;
+      &:hover{
+        color: #2196F3;
+      }
+    }
+  }
+  &.open{
+    box-shadow: 1px 1px 5px -1px #505050;
+    ul{
+      width: 300px;
+      height: auto;
+      opacity: 1;
+      
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.title{
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-size: 16px;
+}
+.form-item{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    input{
+        margin: 0px;
+        padding: 10px 10px;
+        font-size: 14px;
+        color: #505050;
+        outline: none;
+        border: 1px solid #aaaaaa;
+        transition: 0.3s;
+        &:focus{
+            border: 1px solid #2196F3;
+        }
+    }
+   
+}
+.hidden{
+    display: none;
+}
