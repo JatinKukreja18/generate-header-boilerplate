@@ -1,0 +1,21 @@
+.editor-list{
+    width: 50%;
+    ul{
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+        li{
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            label{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
