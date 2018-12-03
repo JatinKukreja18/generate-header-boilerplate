@@ -1,4 +1,4 @@
 import ControlPanel from './control-panel';
-import Header from './header';
+import Header from './editor';
 
 export {ControlPanel , Header}

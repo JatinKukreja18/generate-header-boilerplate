@@ -16,8 +16,8 @@ class ConfigForm extends Component {
     this.setState({
       config : {
         namespace: form[0].value ? form[0].value : 'default',
-        htmlFile: form[1].value ? form[1].value : 'index',
-        cssFile: form[2].value ? form[2].value : 'index',
+        // htmlFile: form[1].value ? form[1].value : 'index',
+        // cssFile: form[2].value ? form[2].value : 'index',
       },
       formActive: false
 
@@ -40,14 +40,14 @@ class ConfigForm extends Component {
                 Namespace
                 <input type="text" placeholder="Namespace" name="namespace" />
               </label>
-              <label className="form-item">
+              {/* <label className="form-item">
                 HTML file name
                 <input type="text" placeholder="default : index.html" />
               </label>
               <label className="form-item">
                 CSS file name
                 <input type="text" placeholder="default : index.css"/>
-              </label>
+              </label> */}
               <button className="blue-button" onClick={(e) => this.save(e, this.refs.configForm)}>Save</button>
           </form>
 
@@ -55,12 +55,12 @@ class ConfigForm extends Component {
               <label className="form-item">
                 Namespace: {this.state.config.namespace}
               </label>
-              <label className="form-item">
+              {/* <label className="form-item">
                 HTML file name: {this.state.config.htmlFile}
               </label>
               <label className="form-item">
                 CSS file name: {this.state.config.cssFile}
-              </label>
+              </label> */}
               <button className="blue-button" onClick={()=> this.editFrom()}>Edit</button>
           </div>
         </div>

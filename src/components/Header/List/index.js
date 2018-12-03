@@ -8,9 +8,13 @@ class List extends Component {
         this.setState({widgetOpen : !this.state.widgetOpen})
     }
     render() {
+        const {data} = this.props;
+        console.log(data)
         return (
-                <ul>
-                    <li> <a>Menu</a> </li>
+                <ul style={{order:data.order}}>
+                    {data.items.map((item, i) => 
+                    <li key={i} > <a href={item.link}>{item.text} </a> 
+                    </li>)}
                 </ul>
         );
     }

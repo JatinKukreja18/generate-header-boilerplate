@@ -4,94 +4,76 @@
     background: #f3f4f5;
     display : flex;
     flex-direction: column;
+    .editor-title{
+      margin-top: 5px;
+      align-items: center;
+      margin-bottom: 30px;
+      display: flex;
+    }
 }
-#my-header a.logo{
-  display: block;   
-}
-#my-header ul{
-  padding: 0px;
-  margin: 0px;
-  display: flex;
-  list-style-type: none;
-  align-items: center;
-}
-#my-header ul li{
-  height: 100%;
-}
-#my-header ul li a {
-  padding: 5px 10px;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  color: #000;
-  align-items: center;
-  text-decoration: none;
-}
-#my-header .hidden{
-  display: none !important;
-}
-#my-header ul li a:hover{
-  background: #f3f4f5;
-}
-#my-header a img{
-  height: 50px;
-}
-
-
-
-
-
-
-// customisation widget
-.widget-options{
-  display: flex;
-    align-items: center;
-    background: #fff;
-    margin: 40px 0px;
-    width: max-content;
-    padding: 4px;
-    transition: .2s;
-    border-radius: 50px;
-    max-height: 24px;
-  .fab-button{
-    width: 24px;
-    height: 24px;
+.editor-header{
+  justify-content: space-between;
     display: flex;
-    background: #2196F3;
-    color: #ffffff;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    border-radius: 50%;
-    cursor: pointer;
+    input{
+      width: 20px;
+      text-align: center;
+    }
+}
+.export-html{
+  margin-left: auto;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inlin-block;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #2196F3;
+  &:hover{
+      color: #505050;
   }
-  ul{
-    width: 0px;
-    height: 0px;
-    list-style-type: none;
-    overflow: hidden;
+}
+.export-section{
+  position: fixed;
+    min-height: 80vh;
+    min-width: 80vw;
+    background: #fff;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 1px 1px 10px 0px #ccc;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 60px 30px;
+    bottom: 0;
     display: flex;
-    margin: 0px;
-    padding: 0px;
-    transition: 0.3s;
-    justify-content: space-around;
-    opacity: 0;
-    li{
-      padding: 5px;
-      font-size: 12px;
-      cursor: pointer;
-      &:hover{
-        color: #2196F3;
+    justify-content: space-between;
+    transition: 0.2s;
+    transform-origin: top right;
+    >div{
+      width: 40%;
+      height: 100%;
+      resize: none;
+      textarea{
+        width: 100%;
+        height: 400px;
+        resize: none;
       }
     }
-  }
-  &.open{
-    box-shadow: 1px 1px 5px -1px #505050;
-    ul{
-      width: 300px;
-      height: auto;
-      opacity: 1;
-      
+    &.close{
+      transform: scaleX(0);
     }
-  }
+    &.open{
+      transform: scaleX(1);
+    }
+    .close-icon{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 12px;
+      cursor: pointer;
+      color: #000;
+      &:hover{
+        color: #505050;
+      }
+    }
 }

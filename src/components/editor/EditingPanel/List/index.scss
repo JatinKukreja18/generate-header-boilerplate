@@ -1,6 +1,6 @@
-.editor-list{
-    width: 50%;
-    ul{
+.editor-widget{
+    width: 45%;
+    >ul{
     background: #fff;
     padding: 10px;
     display: flex;
@@ -17,5 +17,11 @@
                 flex-direction: column;
             }
         }
+    }
+    >div{
+        background: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
     }
 }

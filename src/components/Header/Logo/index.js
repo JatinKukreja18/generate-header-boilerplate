@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import "./index.scss";
 class Logo extends Component {
     render() {
-        if(this.props.hasLink){
+        const data = this.props.data;
+        console.log(this.props.data)
+        if(data.hasLink){
             return (
-                <a><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" alt="logo"/></a>
+                <a style={{order:data.order}} className="logo" href={data.logoLink}><img src={data.url} alt="logo"/></a>
             );
         }
         else{
             return (
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" alt="logo"/>
+                <img style={{order:data.order}} className="logo" src={data.url} alt="logo"/>
             );
         }      
     }

@@ -20,15 +20,22 @@ h1,h2,h3,h4,h5,h6{
   text-transform: uppercase;
   letter-spacing: 0.35em;
 }
+label{
+  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: pointer;
+  input{
+    margin-left: 20px;
+  }
+  &:hover{
+    color: #505050;
+  }
+}
+
 #root{
   width: 100%;
 }
-#my-header{
-  display: flex;
-  background: #fff;
-  height: 50px;   width: 100%;
-  box-shadow: 1px 1px 10px 0px #ccc;  
-}
+
 
 button.blue-button{
   border: 1px solid transparent;
@@ -63,4 +70,9 @@ input{
   &:focus{
       border: 1px solid #2196F3;
   }
+}
+
+.radio-group{
+  display: flex;
+  justify-content: space-between;
 }

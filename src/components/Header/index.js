@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import "./index.scss";
+import Logo from "./Logo";
 import List from "./List";
-
+import Search from "./Search";
 class Header extends Component {
     state = {
         widgetOpen : false,
-        addList : false
+        addList : false,
+        align: 'left'
     }
     toggleOptions(){
         this.setState({widgetOpen : !this.state.widgetOpen})
@@ -14,65 +16,62 @@ class Header extends Component {
         this.setState({addList : true});
         this.toggleOptions();
     }
+    realign(val){
+        console.log(val);
+        this.setState({align:val})
+    }
   render() {
+      const {totalConfig} = this.props;
     return (
-        <main className="editor-panel">
-          <h2>Generate Header HTML</h2>
-        <header id="my-header">
-        </header>
-        <div className={`widget-options ${this.state.widgetOpen ? "open" : ""}`}>
-            <a className="fab-button" onClick={()=>this.toggleOptions()}>
-                <span>{this.state.widgetOpen? '-': '+'}</span>
-            </a>
-            <ul>
-                <li>
-                     Text
-                </li>
-                <li>
-                     Logo
-                </li>
-                <li onClick={()=> this.addItem(3)}>
-                     List
-                </li>
-                <li>
-                    Button
-                </li>
-                <li>
-                    Dropdown
-                </li>
+        <div>
+            <header id="my-header" style={{justifyContent:this.state.align}}>
+                {
+                    totalConfig.data && totalConfig.data.logo ? 
+                        <Logo data={totalConfig.data.logo}/> 
                 
-            </ul>
-        </div>
-
-        {this.state.addList ? <List/> : null}
-
-        {/* <div class="customise">
-            <h3>Header Styling</h3>
+                    : null
+                }
+                {
+                    totalConfig.data && totalConfig.data.list ? 
+                            <List data={totalConfig.data.list}/>
+                    : null
+                }
+                {
+                    totalConfig.data && totalConfig.data.search ? 
+                            <Search data={totalConfig.data.search}/>
+                    : null
+                }
+            </header>
+            
+            {totalConfig.data?
+            
+            (
             <div>
-                <h3>Justify</h3>
-                <label >
-                    <input type="radio" name="Justify" id="" value="flex-start" checked onClick="styleHeader('justifyContent',value)"/>
-                    left
+            <h3>Alignment</h3>
+            <div className="radio-group">
+                <label>
+                    Left
+                    <input type="radio" name="alignment" defaultChecked value="flex-start" onChange={(e)=>this.realign(e.target.value)}/>
                 </label>
-                <label >
-                    <input type="radio" name="Justify" id="" value="flex-end" onClick="styleHeader('justifyContent',value)"/>
-                    right
+                <label>
+                    Center
+                    <input type="radio" name="alignment" value="center" onChange={(e)=>this.realign(e.target.value)}/>
                 </label>
-                <label >
-                    <input type="radio" name="Justify" id="" value="center" onClick="styleHeader('justifyContent',value)"/>
-                    center
+                <label>
+                    Space Between
+                    <input type="radio" name="alignment" value="space-between"onChange={(e)=>this.realign(e.target.value)}/>
                 </label>
-                <label >
-                    <input type="radio" name="Justify" id="" value="space-between" onClick="styleHeader('justifyContent',value)"/>
-                    space between
+                <label>
+                    Space Around
+                    <input type="radio" name="alignment" value="space-around" onChange={(e)=>this.realign(e.target.value)}/>
                 </label>
-                <label >
-                    <input type="radio" name="Justify" id="" value="space-around" onClick="styleHeader('justifyContent',value)"/>
-                    space around
+                <label>
+                    Right
+                    <input type="radio" name="alignment" value="flex-end"onChange={(e)=>this.realign(e.target.value)}/>
                 </label>
-            </div>
-        </div> */}
-        </main>
+            </div></div>)
+            :null}
+        </div>
     );
   }
 }
